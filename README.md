@@ -9,25 +9,19 @@
     git clone
     ```
 
-2. You need anaconda, imagemagick installed & arduino-cli. Install anaconda using this [link](https://www.anaconda.com/docs/getting-started/anaconda/install#macos-linux-installation)
-    ```bash
-    # arduino cli
-    brew install arduino-cli
+2. Install dependencies:
 
-    ```
-
-3. Install dependencies
     The script requires a few dependencies, including arduino-cli, image magick, and python. Python should come by default on most systems,
     and you can google how to install arduino-cli and image magick. For me on arch its:
     ```bash
     sudo pacman -S imagemagick arduino-cli
     ```
-4. Just run the script
+3. Just run the script
     ```bash
     chmod +x upload.sh
     ./upload.sh
     ```
-5. Follow the instructions and yay!
+4. Follow the instructions and yay!
 
 ## Wooo
 
