@@ -56,7 +56,7 @@ magick badge.bmp \
 
 if [ -f img_resized.png ]; then
     echo "Overlaying image on the badge..."
-    magick newbadge.bmp img_resized.png -geometry +220+5 -composite newbadge.bmp
+    magick newbadge.bmp img_resized.png -geometry +225+5 -composite newbadge.bmp
 fi
 
 # Convert it to a format suitable for the device
