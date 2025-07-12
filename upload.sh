@@ -1,5 +1,7 @@
 #!/bin/bash
-
+arduino-cli config init # not necessary if you have already used arduino-cli prior
+arduino-cli core install rp2040:rp2040
+arduino-cli lib install "Adafruit NeoPixel"
 echo "welcome to undercity broken lanyard upload script"
 
 rm img.png
@@ -58,18 +60,18 @@ fi
 
 # Convert it to a format suitable for the device
 
-~/anaconda3/bin/python bmp_to_array.py newbadge.bmp f.h gImage_img
+python3 bmp_to_array.py newbadge.bmp f.h gImage_img
 
 arduino-cli compile --fqbn rp2040:rp2040:generic_rp2350 --output-dir ./build
 if [ $? -ne 0 ]; then
     echo "Compilation failed. Please check the code."
     exit 1
 fi
-echo "Please press the boot button on the device and press enter when plugged in"
+echo "Please press the boot button on the device and then plug it in. Then go to your file manager and click on it and make sure that it shows the files on it. Then press enter."
 # Wait for the user to press enter
-read -p "Press enter to continue..."
+read -p "Read above, then press enter to continue..."
 # Upload the compiled binary to the device
-cp build/undercity-lanyard.ino.uf2 /Volumes/RP2350/
+cp build/undercity-lanyard.ino.uf2 /run/media/$USER/RP2350
 if [ $? -ne 0 ]; then
     echo "Upload failed. Please check the device connection."
     exit 1
