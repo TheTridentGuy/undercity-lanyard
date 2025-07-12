@@ -1,5 +1,6 @@
 #!/bin/bash
 arduino-cli config init # not necessary if you have already used arduino-cli prior
+arduino-cli config add board_manager.additional_urls https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
 arduino-cli core install rp2040:rp2040
 arduino-cli lib install "Adafruit NeoPixel"
 echo "welcome to undercity broken lanyard upload script"
